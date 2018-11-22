@@ -11,7 +11,7 @@ Check your Raspberry Pi3 enable uart interface
 
     sudo vim /boot/config/
 
-Insert the command below
+Insert the command below , and restart
 
     enable_uart = 1
     
@@ -21,12 +21,13 @@ Check your tty device "ttyS0" should appear
 
 And give a try
 
-    python3 g3.py
+    python3 g3_python3.py
 
 
 # Output
 
-python3 g3.py
+python3 g3_python3.py
+
 [2, 8, 5, 2, 8, 5]
 
 [pm1_cf, pm10_cf, pm2.5_cf, pm1, pm10, pm2.5]
