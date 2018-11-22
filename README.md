@@ -1,24 +1,32 @@
 # pms3003-g3
-read pm data from pms3003 g3 sensor with python
+The version to support to read pm data from pms3003 g3 sensor with python3 on Raspberry Pi3
 
 # install and run
 
-download g3.py and install python modules
+Download g3.py and install python modules
 
-    apt-get install python-pip python-serial
+    sudo apt-get install python3-pip python3-serial
 
-check your tty device (ttyUSB0 or ttyAMA0)
-update g3.py last line
+Check your Raspberry Pi3 enable uart interface
+
+    sudo vim /boot/config/
+
+Insert the command below
+
+    enable_uart = 1
     
-    print air.read("/dev/ttyAMA0") // update device
+Check your tty device "ttyS0" should appear
 
-give a try
+    ls /dev/tty*
 
-    python g3.py
+And give a try
+
+    python3 g3.py
+
 
 # Output
 
-python g3.py
+python3 g3.py
 [2, 8, 5, 2, 8, 5]
 
 [pm1_cf, pm10_cf, pm2.5_cf, pm1, pm10, pm2.5]
@@ -27,5 +35,3 @@ First three data (pmX_cf, cf=1) is the to value is a TSI For standard data.
 
 Last three is reading to the value of value is an atmosphere as the standard.
 
-# to stop  sysrq: SysRq : HELP : ...... messag
-    echo 0 > /proc/sys/kernel/sysrq
